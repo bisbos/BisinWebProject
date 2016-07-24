@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: bisin-web-project
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URI:http://${DOCKER_HOST:localhost}:8888}
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/mystudydb
+    username: ${DB_ENV_USER:root}
+    password:
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+     ddl-auto: update
